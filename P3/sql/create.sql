@@ -24,10 +24,11 @@ importe        float    not null,
 idComercio     char(16) not null,
 numeroTarjeta  char(19) not null references tarjeta,
 fecha          timestamp not null default current_timestamp,
+instancia      varchar(50),
+ip             varchar(50),
 CONSTRAINT     Pago_UC  unique(idTransaccion, idComercio),
 PRIMARY KEY (idAutorizacion)
 );
 
 -- INSERT INTO pago(idAutorizacion,idTransaccion, codRespuesta, importe, idComercio, numeroTarjeta)
 -- VALUES (NEXTVAL(pago_idAutorizacion_seq), 1,'000', 123.00, '0000000000000000', '1111 2222 3333 4444');
-
